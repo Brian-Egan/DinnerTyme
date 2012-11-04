@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<div class="ShowRecipe">
+
+    <%= image_tag(@recipe.photo, :class => "img-polaroid") %>
+    <h2><%= @recipe.name %></h2>
+
+    <p class="lead"><b>Serves: </b><%= @recipe.serves %> <br />
+    <b>Rating: </b> <%= @recipe.rating %> </p>
+
+
+
+    <p class="RecipeSteps"><br /><b>Directions: </b>  <%= @recipe.steps %> <p>
+   
+</div>
+
+<button class="btn btn-primary "> Add to My Kitchen </button>
+<br />
+<br />
+
+<%= link_to 'Edit', edit_recipe_path(@recipe), :class => 'btn btn-warning' %> |
+<%= link_to 'Back', recipes_path, :class => 'btn btn-danger' %>

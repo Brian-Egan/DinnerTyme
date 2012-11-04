@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+<title>DinnerTyme</title>
+	<%= stylesheet_link_tag "application", :media => "all" %> 
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+</head> 
+<body>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div id="nav" class="span2" >
+    	<%= image_tag('chef3.png') %>
+    	<br />
+    	<br />
+		<ul>
+			<li><%= link_to 'Home', root_path %> 
+			<li><%= link_to 'Kitchens', kitchens_path %> 
+			<li><%= link_to 'Ingredients', ingredients_path %>
+			<li><%= link_to 'Recipes', recipes_path %>
+
+		</ul> 
+	</div>
+	<div class="span10" > 
+		<%= yield %> 
+	</div> 
+</body>
+</html>

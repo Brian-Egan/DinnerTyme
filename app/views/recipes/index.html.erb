@@ -1,0 +1,35 @@
+<h1>Recipes</h1>
+
+<!-- <table>
+  <tr>
+    <th>Name</th>
+    <th>Steps</th>
+    <th>Photo</th>
+    <th>Serves</th>
+    <th>Rating</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr> -->
+
+<% @recipes.each do |recipe| %>
+<div class="Recipe">
+  <hr>
+    <%= image_tag(recipe.photo) %>
+    <h2><%= link_to recipe.name, recipe %></h2>
+    <p><b>Serves:</b><%= recipe.serves %>
+    <b>Rating:</b> <%= recipe.rating %> </p>
+    <button class="btn btn-info"><%=  link_to 'Show Steps', recipe %> </button>
+    <p> <%= link_to '', edit_recipe_path(recipe), :class => 'icon-edit' %>
+        <%= link_to '', recipe, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'icon-trash' %> </p>
+   
+</div>
+
+<% end %>
+
+
+<br />
+<div class="CreateNew">
+    <hr>
+<%= link_to 'New Recipe', new_recipe_path %>
+</div>
