@@ -8,7 +8,6 @@
 #  amount     :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  recipe_ids :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

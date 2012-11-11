@@ -8,23 +8,11 @@
     <p class="lead"><b>Serves: </b><%= @recipe.serves %> <br />
     <b>Rating: </b> <%= @recipe.rating %> </p>
 
-    <p class="IngredientList"><b>Ingredients Needed: </b></p>
-    <ul>
-    <% @recipe.ingredients.each do |i| %>
-    
-    <li> <%= i.amount %> <%= i.unit %> <%= i.name %> </li>
-    <% end %>
+    <p class="IngredientList"><b>Ingredients Needed: </b> <%=# @recipe.ingredients %></p>
 
 
 
-</ul>
-
-
-
-
-
-
-    <p class="RecipeSteps"><b>Directions: </b><%= @recipe.steps %> </p>
+    <p class="RecipeSteps"><b>Directions: </b>  <%= @recipe.steps %> </p>
    
 </div>
 

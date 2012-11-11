@@ -38,19 +38,15 @@
   </div>
 
   <div>
-    <p>Ingredients: <br />
-      <i><small>Please select all that apply</i></small></p>
-   <div class="field">
-    <% Ingredient.all.each do |i| %>
-      <%= i.name %>
-      <%= check_box_tag 'recipe[ingredient_ids][]', i.id, @recipe.ingredients.include?(i)  %>
-      <br /> <br /> 
-  <% end %>
+    <% Ingredient.all.each do |ingredient| %>
 
+    <%= check_box_tag 'ingredient_ids[]', ingredient.id  %>
+    <%= ingredient.name %>
+  <% end %>
 </div>
 
 
-  <div class="action">
+  <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
