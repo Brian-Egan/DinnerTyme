@@ -1,23 +1,27 @@
-<h1>Listing kitchens</h1>
+<div class="formHeader">
+     <%= link_to 'New Kitchen', new_kitchen_path, :class => 'btn btn-large btn-success' %>
+ </div>
+ 
+<div class="page-header">
+        <h1>Kitchens <small>allow you to collect favorite recipes!</small>
+          <p><%= link_to 'Click here to create a new kitchen.', new_kitchen_path %>
+        </h1>
+     
+     </div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <% @kitchens.each do |k| %>
+      <div class="hero-unit-k">
+         
+        <p></p>
 
-<% @kitchens.each do |kitchen| %>
-  <tr>
-    <td><%= kitchen.name %></td>
-    <td><%= link_to 'Show', kitchen %></td>
-    <td><%= link_to 'Edit', edit_kitchen_path(kitchen) %></td>
-    <td><%= link_to 'Destroy', kitchen, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+        <h2 class="heading"><%= k.name %></h2>
 
-<br />
+        <div class="btns"> <%=  link_to 'Show Recipes', k, :class => 'btn btn-primary btn-large' %> <%=  link_to 'Add Recipes', recipes_path, :class => 'btn btn-primary btn-large btn-1' %>
+        </div>
+      </div>
+      <% end %>
 
-<%= link_to 'New Kitchen', new_kitchen_path %>
+    </div>
+  </div>
+
+

@@ -1,3 +1,4 @@
+<div class="page-header">
 <%= form_for(@kitchen) do |f| %>
   <% if @kitchen.errors.any? %>
     <div id="error_explanation">
@@ -12,10 +13,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
+  <p><b>Add Recipes: </b></p>
+  <div class="field">
+    <% Recipe.all.each do |r| %>
+      <%= r.name %>
+      <%= check_box_tag 'kitchen[recipe_ids][]', r.id, @kitchen.recipes.include?(r)  %>
+      <br /> <br /> 
+  <% end %>
+
+</div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+</div>

@@ -1,27 +1,23 @@
-<h1>Listing ingredients</h1>
+<div class="formHeader">
+     <%= link_to 'New Ingredient', new_ingredient_path, :class => 'btn btn-large btn-success' %>
+ </div>
+<div class="page-header">
+        <h1>Ingredients <small>what do you need???</small>
+        </h1>
+     </div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Unit</th>
-    <th>Amount</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <% @ingredients.each do |i| %>
+      <div class="hero-unit-i">
+         
+        <p></p>
 
-<% @ingredients.each do |ingredient| %>
-  <tr>
-    <td><%= ingredient.name %></td>
-    <td><%= ingredient.unit %></td>
-    <td><%= ingredient.amount %></td>
-    <td><%= link_to 'Show', ingredient %></td>
-    <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
-    <td><%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+        <h2 class="heading"><%= i.name %> <small>
+        <%= i.amount %> <%= i.unit %> </small></h2>
+        <div class="btns"> <%=  link_to 'Update', edit_ingredient_path(i), :class => 'btn btn-primary btn-large' %> 
+         <%= link_to 'Delete', i, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+      </div>
+      </div>
+      <% end %>
 
-<br />
-
-<%= link_to 'New Ingredient', new_ingredient_path %>
+    </div>
+  </div>

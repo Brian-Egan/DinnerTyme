@@ -1,0 +1,12 @@
+      <div class="hero-unit">
+         <div class="rectangle"> <%=image_tag(r.photo, :class => 'img-rounded') %> </div>
+        <p></p>
+
+        <h2 class="heading"><%= r.name %></h2>
+        <p><b>Serves: </b> <%= r.serves %></p>
+        <p><b>Rating:</b> <%= r.rating %></p>
+        <div class="btns"> <%=  link_to 'Show Steps', r, :class => 'btn btn-primary btn-large' %> <%=  link_to 'Add to Kitchen', edit_recipe_path(r), :class => 'btn btn-primary btn-large btn-1' %>  <%= link_to '', edit_recipe_path(r), :class => 'icon-edit' %>
+        </div>
+
+
+      </div>

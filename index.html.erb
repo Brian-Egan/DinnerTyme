@@ -1,0 +1,43 @@
+<h1>Recipes</h1>
+
+<div class="page-header">
+        <h1>Recipes <small>yum, yum, yum!</small>
+        </h1>
+      </div>
+      <h2 class="dom-heading">Create new recipes, or add an existing one to your kitchen.</h2>
+     
+
+    <% @recipes.each do |recipe| %>
+      <div class="hero-unit">
+        <p></p>
+        <h2 class="heading"><%= recipe.name %></h2>
+        <p>Sserves: <%= recipe.serves %></p>
+        <p><b>Rating:</b> <%= recipe.rating %></p>
+        <div class="btns"> <a href="#" class="btn btn-primary btn-large">See Steps</a>  <a href="#" class="btn btn-primary btn-large btn-1">Add to Kitchen</a>
+        </div>
+        <div class="rectangle"> <%=image_tag(recipe.photo) %> </div>
+      </div>
+      
+    </div>
+
+
+<div class="Recipe">
+  <hr>
+    <%= image_tag(recipe.photo) %>
+    <h2><%= link_to recipe.name, recipe %></h2>
+    <p><b>Serves:</b><%= recipe.serves %>
+    <b>Rating:</b> <%= recipe.rating %> </p>
+    <button class="btn btn-info"><%=  link_to 'Show Steps', recipe %> </button>
+    <p> <%= link_to '', edit_recipe_path(recipe), :class => 'icon-edit' %>
+        <%= link_to '', recipe, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'icon-trash' %> </p>
+   
+</div>
+
+<% end %>
+
+
+<br />
+<div class="CreateNew">
+    <hr>
+<%= link_to 'New Recipe', new_recipe_path %>
+</div>

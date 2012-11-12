@@ -1,6 +1,12 @@
-<h1>Editing kitchen</h1>
+<div class="formHeader">
+	<h1>Editing Kitchen</h1>
+	<div class="RecipeButtons">
+<%= link_to 'Show', @kitchen, :class => 'btn btn-primary btn-medium' %> 
+<%= link_to 'Back', kitchens_path, :class => 'btn btn-warning btn-medium' %>
+</div>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @kitchen %> |
-<%= link_to 'Back', kitchens_path %>
+
+

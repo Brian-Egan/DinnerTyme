@@ -1,10 +1,19 @@
+<div class="page-header">
 <p id="notice"><%= notice %></p>
 
 <p>
   <b>Name:</b>
   <%= @kitchen.name %>
+
+</div>
+
+  <% @kitchen.recipes.all.each do |r| %>
+ 	 <%= render :partial => "shared/recipe", :locals => {:r => r} %>
+   <% end %>
 </p>
 
 
-<%= link_to 'Edit', edit_kitchen_path(@kitchen) %> |
-<%= link_to 'Back', kitchens_path %>
+<div class="RecipeButtons">
+<%= link_to 'Edit', edit_kitchen_path(@kitchen),  :class => 'btn btn-danger btn-medium' %> 
+<%= link_to 'Back', kitchens_path,  :class => 'btn btn-warning btn-medium' %>
+</div>

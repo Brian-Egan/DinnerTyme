@@ -1,19 +1,22 @@
 <p id="notice"><%= notice %></p>
 
+<div class="page-header">
+        <h1><%= @recipe.name %> <br /><small>Serves: <%= @recipe.serves %>  </small> 
+        </h1>
+      </div>
+
 <div class="ShowRecipe">
 
-    <%= image_tag(@recipe.photo, :class => "img-polaroid") %>
-    <h2><%= @recipe.name %></h2>
-
-    <p class="lead"><b>Serves: </b><%= @recipe.serves %> <br />
-    <b>Rating: </b> <%= @recipe.rating %> </p>
-
+    <%= image_tag(@recipe.photo, :class => "rectangle") %>
+    
+    <hr />
     <p class="IngredientList"><b>Ingredients Needed: </b></p>
     <ul>
     <% @recipe.ingredients.each do |i| %>
     
     <li> <%= i.amount %> <%= i.unit %> <%= i.name %> </li>
     <% end %>
+    <hr />
 
 
 
@@ -28,9 +31,15 @@
    
 </div>
 
-<button class="btn btn-primary "> Add to My Kitchen </button>
+<%=  link_to 'Add to Kitchen', edit_recipe_path(@recipe), :class => 'btn btn-primary btn-large btn-1' %> 
+
 <br />
 <br />
 
-<%= link_to 'Edit', edit_recipe_path(@recipe), :class => 'btn btn-warning' %> |
-<%= link_to 'Back', recipes_path, :class => 'btn btn-danger' %>
+<div class="RecipeButtons">
+<%= link_to 'Back', recipes_path, :class => 'btn btn-danger btn-medium' %>
+<%= link_to 'Edit', edit_recipe_path, :class => 'btn btn-warning btn-medium' %>
+</div>
+
+<br />
+<br />

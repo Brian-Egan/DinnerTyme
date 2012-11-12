@@ -1,35 +1,28 @@
-<h1>Recipes</h1>
+<div class="formHeader">
+     <%= link_to 'New Recipe', new_recipe_path, :class => 'btn btn-large btn-success' %>
+ </div>
 
-<!-- <table>
-  <tr>
-    <th>Name</th>
-    <th>Steps</th>
-    <th>Photo</th>
-    <th>Serves</th>
-    <th>Rating</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr> -->
+<div class="page-header">
+        <h1>Recipes <small>yum, yum, yum!</small> <p>Create <%= link_to 'new recipes', new_recipe_path %>, or add an existing one to your kitchen.</p><br />
+           
+        </h1>
+     
+      
+      </div>
 
-<% @recipes.each do |recipe| %>
-<div class="Recipe">
-  <hr>
-    <%= image_tag(recipe.photo) %>
-    <h2><%= link_to recipe.name, recipe %></h2>
-    <p><b>Serves:</b><%= recipe.serves %>
-    <b>Rating:</b> <%= recipe.rating %> </p>
-    <button class="btn btn-info"><%=  link_to 'Show Steps', recipe %> </button>
-    <p> <%= link_to '', edit_recipe_path(recipe), :class => 'icon-edit' %>
-        <%= link_to '', recipe, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'icon-trash' %> </p>
-   
-</div>
+      
 
-<% end %>
+    <% @recipes.each do |r| %>
+        <%= render :partial => "shared/recipe", :locals => {:r => r} %>
+
+      <% end %>
+    </div>
+
+
+
+
 
 
 <br />
-<div class="CreateNew">
-    <hr>
-<%= link_to 'New Recipe', new_recipe_path %>
+
 </div>
